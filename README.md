@@ -1,5 +1,5 @@
-# BitlyBot
-Bitly Short link generator Bot 
+# pdiskbot
+pdisk Short link generator Bot 
 
 
 ## Configs
@@ -10,16 +10,10 @@ Bitly Short link generator Bot
 
 * API_HASH    - From my.telegram.org
 
-* BITLY_TOKEN  - From https://bitly.is/accesstoken
+* adrinolonks_TOKEN  - From https://adrinolinks.in/member/tools/api
 
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/lntechnical2/BitlyBot)
 
-## Support 🇮🇳
-<a href="https://t.me/lntechnical">
-   <p> Telegram </p>
-  </a>
-<a href="https://youtube.com/c/LNtechnical">
-   <p> YouTube </p>
-  </a>
+</a>
 
