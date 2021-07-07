@@ -31,12 +31,10 @@ async def Adrino(client,message):
   try:
 $long_url = urlencode('yourdestinationlink.com');
 $api_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
-$api_url = "https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias";
-$result = @json_decode(file_get_contents($api_url),TRUE);
-if($result["status"] === 'error') {
- echo $result["message"];
-} else {
- echo $result["shortenedUrl"];
+$api_url = "https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias&format=text";
+$result = @file_get_contents($api_url);
+if( $result ){
+ echo $result;
 }
     
 app.run()
