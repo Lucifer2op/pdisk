@@ -29,7 +29,7 @@ async def Adrino(client,message):
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-r = requests.post('https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias&format=text', headers=headers,data = data )
+r = requests.post('https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias', headers=headers,data = data )
     result = r.json()
     link = result["link"]
     await message.reply_text(f"
