@@ -30,7 +30,7 @@ async def Adrino(client,message):
   data = json.dumps(value)
   try:
     r = requests.post('https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias', headers=headers,data = data )
-    result = r.json(file_get_contents)
+    result = r.json(api_url)
     link = result["link"]
     await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
   except Exception as e :
