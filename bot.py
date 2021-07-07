@@ -29,12 +29,15 @@ async def Adrino(client,message):
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-    r = requests.post('https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias', headers=headers,data = data )
-    result = r.json(api_url)
-    link = result["link"]
-    await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
-  except Exception as e :
-    await message.reply_text(e)
+$long_url = urlencode('yourdestinationlink.com');
+$api_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
+$api_url = "https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias";
+$result = @json_decode(file_get_contents($api_url),TRUE);
+if($result["status"] === 'error') {
+ echo $result["message"];
+} else {
+ echo $result["shortenedUrl"];
+}
     
 app.run()
     
