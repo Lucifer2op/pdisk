@@ -13,8 +13,8 @@
         "API_HASH": {
             "description": "Your API_HASH from https://my.telegram.org/apps"
         },
-        "BITLY_TOKEN":{
-            "description": "Your andrinolink_TOKEN from https://adrinolinks.in/member/tools/api"
+        "ADRINO_TOKEN":{
+            "description": "Your ADRINO_TOKEN from https://adrinolinks.in/member/tools/api"
         
         }
     },
