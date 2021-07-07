@@ -29,7 +29,6 @@ async def Adrino(client,message):
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-$long_url = urlencode('yourdestinationlink.com');
 $bot_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
 $api_url = "https://adrinolinks.in/api?api={$bot_token}&url={$long_url}&alias=CustomAlias";
 $result = @json_decode(file_get_contents($api_url),TRUE);
