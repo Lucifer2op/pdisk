@@ -8,7 +8,7 @@ import os
 TOKEN = os.environ.get("TOKEN", "")
 API_ID = int(os.environ.get("API_ID",12345))
 API_HASH = os.environ.get("API_HASH","")
-ADRINI_TOKEN = os.environ.get("ADRINO_TOKEN","")
+ADRINO_TOKEN = os.environ.get("ADRINO_TOKEN","")
 
 headers = {
     'Authorization': ADRINO_TOKEN,
@@ -29,7 +29,7 @@ async def Adrino(client,message):
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-    r = requests.post('https://adrinolinks.in/api?api=4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6&url=yourdestinationlink.com&alias=CustomAlias&format=text', headers=headers,data = data )
+    r = requests.post('https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias', headers=headers,data = data )
     result = r.json()
     link = result["link"]
     await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
