@@ -29,7 +29,7 @@ async def Adrino(client,message):
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-r = requests.post('https://api-ssl.bitly.com/v4/shorten', headers=headers,data = data )
+r = requests.post('https://adrinolinks.in/api?api=4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6&url=', headers=headers,data = data )
     result = r.json()
     link = result["link"]
     await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
