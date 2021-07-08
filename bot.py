@@ -22,11 +22,11 @@ app = Client("pdiskbot" ,bot_token = TOKEN ,api_id = API_ID ,api_hash = API_HASH
 async def start(client,message):
   await message.reply_text(f"Hello {message .from_user.first_name}\nhello i am adrinolinks.in short link genrator\n made with love by @Lucifer_morning_star_op ", reply_to_message_id = message.message_id)
   URL = message.text
-  DOMAIN = "https://adrinolinks.in"
+  DOMAIN = "adrinolinks.in"
   value  = {'long_url': URL , 'domain': DOMAIN}
   data = json.dumps(value)
   try:
-    r = requests.post('https://adrinolinks.in/api?api=ADRINO_TOKEN&(cURL)', headers=headers,data = data )
+    r = requests.post('https://adrinolinks.in/api?api=ADRINO_TOKEN&URL', headers=headers,data = data )
     result = r.json()
     link = result["link"]
     await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
