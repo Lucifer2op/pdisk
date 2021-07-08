@@ -23,8 +23,8 @@ async def start(client,message):
   await message.reply_text(f"Hello {message .from_user.first_name}\nhello i am adrinolinks.in short link genrator\n made with love by @Lucifer_morning_star_op ", reply_to_message_id = message.message_id)
   
 $long_url = urlencode('yourdestinationlink.com');
-$api_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
-$api_url = "https://adrinolinks.in/api?api={$api_token}&url={$long_url}&alias=CustomAlias";
+$adrino_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
+$adrino_url = "https://adrinolinks.in/api?api={$adrino_token}&url={$long_url}&alias=CustomAlias";
 $result = @json_decode(file_get_contents($api_url),TRUE);
 if($result["status"] === 'error') {
  echo $result["message"];
