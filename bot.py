@@ -21,16 +21,17 @@ app = Client("pdiskbot" ,bot_token = TOKEN ,api_id = API_ID ,api_hash = API_HASH
 @app.on_message(filters.private & filters.command(['start']))
 async def start(client,message):
   await message.reply_text(f"Hello {message .from_user.first_name}\nhello i am adrinolinks.in short link genrator\n made with love by @Lucifer_morning_star_op ", reply_to_message_id = message.message_id)
-  
-$long_url = urlencode('yourdestinationlink.com');
-$adrino_token = '4b46eb8081b4c2e0cfeffb4d6b479ab5b627e0f6';
-$adrino_url = "https://adrinolinks.in/api?api={$adrino_token}&url={$long_url}&alias=CustomAlias";
-$result = @json_decode(file_get_contents($api_url),TRUE);
-if($result["status"] === 'error') {
- echo $result["message"];
-} else {
- echo $result["shortenedUrl"];
-}
+ URL = message.text
+  DOMAIN = "bit.ly"
+  value  = {'long_url': URL , 'domain': DOMAIN}
+  data = json.dumps(value)
+  try:
+    r = requests.post('https://adrinolinks.in/api?api=ADRINO_TOKEN&url=', headers=headers,data = data )
+    result = r.json()
+    link = result["link"]
+    await message.reply_text(f"```{link}```", reply_to_message_id= message.message_id)
+  except Exception as e :
+    await message.reply_text(e)
   
 app.run()
     
